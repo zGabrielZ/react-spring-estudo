@@ -5,6 +5,7 @@ import {withRouter} from 'react-router-dom'
 import AlunoService from '../services/aluno-services'
 import {msgSucesso,msgErroForm,msgErro} from '../componentes/toastr'
 import SelectMenuEnum from '../componentes/selectMenu'
+import { AuthContext } from '../main/provedor-autenticacao'
 
 class CadastroAluno extends React.Component {
 
@@ -37,6 +38,12 @@ class CadastroAluno extends React.Component {
 
         this.alunoService.cadastrar(aluno)
             .then(response=>{
+                if(this.context.isAutenticado){
+                    this.props.history.push('/home')
+                }
+                else{
+                    this.props.history.push('/login')
+                }
                 msgSucesso('Cadastrado com sucesso !')
             }).catch(error=>{
                 msgErro(error.response.data.titulo)
@@ -54,7 +61,12 @@ class CadastroAluno extends React.Component {
     }
 
     voltar = () =>{
-        this.props.history.push('/login')
+        if(this.context.isAutenticado){
+            this.props.history.push('/home')
+        }
+        else{
+            this.props.history.push('/login')
+        }
     }
 
     render() {
@@ -121,5 +133,7 @@ class CadastroAluno extends React.Component {
     }
 
 }
+
+CadastroAluno.contextType = AuthContext
 
 export default withRouter(CadastroAluno)
