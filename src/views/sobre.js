@@ -16,7 +16,7 @@ class Sobre extends React.Component {
                     do sistema marcando o dia para estudar suas matérias prediletas.
                 </p>
 
-                    <p style={{ position: 'absolute', right: '170px', bottom: '155px' }}>Desenvolvido por Gabriel Ferreira</p>
+                    <p style={{ position: 'absolute', right: '235px', bottom: '155px' }}>Desenvolvido por Gabriel Ferreira</p>
 
                 </div>
 

@@ -21,6 +21,12 @@ class Login extends React.Component {
         this.alunoService = new AlunoService()
     }
 
+    componentDidMount(){
+        if(this.context.isAutenticado){
+            this.props.history.push('/home')
+        }
+    }
+
     entrar = () => {
         this.alunoService.autenticar({
             email:this.state.email,
