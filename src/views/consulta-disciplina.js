@@ -174,8 +174,11 @@ class ConsultaDisciplina extends React.Component {
                                                                 <i className="pi pi-pencil"></i>
                                                             </button></td>
                                                             <td><button title="Deletar"
-                                                                className="btn btn-primary"
-                                                                onClick={this.excluir.bind(this, disciplina.id)}
+                                                                className="btn btn-danger"
+                                                                onClick={() =>
+                                                                    window.confirm(`Deseja excluir esta disciplina : ${disciplina.nome} ?`) &&
+                                                                    this.excluir(disciplina.id)
+                                                                }
                                                             >
                                                                 <i className="pi pi-trash"></i>
                                                             </button></td>

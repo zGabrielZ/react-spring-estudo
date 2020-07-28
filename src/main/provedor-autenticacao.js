@@ -1,6 +1,7 @@
 import React from 'react'
 import AuthService from '../services/auth-service'
 import { msgSucesso } from '../componentes/toastr'
+import LocalStorageService from '../services/localStorage-services'
 
 export const AuthContext = React.createContext()
 export const AuthConsumer = AuthContext.Consumer
@@ -24,6 +25,13 @@ class ProvedorAutenticacao extends React.Component{
         this.setState({isAutenticado:false,alunoAutenticado:null})
         msgSucesso('Deslogado com sucesso !')
     }
+
+    componentDidMount(){
+        const aluno = LocalStorageService.obterItem('_aluno_logado')
+        if(aluno){
+            this.setState({isAutenticado : true})
+        }
+     }
 
     render(){
 

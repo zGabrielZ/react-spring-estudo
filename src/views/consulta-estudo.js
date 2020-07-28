@@ -3,7 +3,7 @@ import Card from '../componentes/card'
 import DisciplinaService from '../services/disciplina-service'
 import EstudoService from '../services/estudo-service'
 import LocalStorageService from '../services/localStorage-services'
-import { msgErro, msgSucesso} from '../componentes/toastr'
+import { msgErro, msgSucesso } from '../componentes/toastr'
 
 class ConsultaEstudo extends React.Component {
 
@@ -34,7 +34,7 @@ class ConsultaEstudo extends React.Component {
         this.props.history.push('/home')
     }
 
-    cadastro = () =>{
+    cadastro = () => {
         this.props.history.push('/cadastro-estudo')
     }
 
@@ -94,7 +94,7 @@ class ConsultaEstudo extends React.Component {
         var ano = dia.getFullYear()
         var horas = dia.getHours()
         var minutos = dia.getMinutes()
-        return(`${diaSemana}/${1+mes}/${ano} ${horas}:${minutos}`)
+        return (`${diaSemana}/${1 + mes}/${ano} ${horas}:${minutos}`)
     }
 
     excluir = (id) => {
@@ -202,9 +202,17 @@ class ConsultaEstudo extends React.Component {
                                                             <td>
                                                                 <button onClick={this.alterarStatusParalisar.bind(this, estudo, 'PARALISADO')} className="btn btn-success">Paralisar</button>
                                                                 <button onClick={this.alterarStatusReinicio.bind(this, estudo, 'REINICIO')} className="btn btn-danger">Reiniciar</button>
-                                                                <button onClick={this.alterarStatusFinalizar.bind(this, estudo, 'TERMINADO',this.data())} className="btn btn-primary">Finalizar</button>
+                                                                <button onClick={this.alterarStatusFinalizar.bind(this, estudo, 'TERMINADO', this.data())} className="btn btn-primary">Finalizar</button>
                                                             </td>
-                                                            <td><button onClick={this.excluir.bind(this, estudo.id)} className="btn btn-info">Deletar</button></td>
+                                                            <td><button title="Deletar"
+                                                                className="btn btn-danger"
+                                                                onClick={() =>
+                                                                    window.confirm(`Deseja excluir este estudo  : ${estudo.disciplina.nome} ?`) &&
+                                                                    this.excluir(estudo.id)
+                                                                }
+                                                            >
+                                                                <i className="pi pi-trash"></i>
+                                                            </button></td>
                                                         </tr>
                                                     )
                                                 }) : null
