@@ -1,0 +1,15 @@
+@media(max-width:481px){
+    .desenvolvido{
+        position: absolute;
+        right: 50px;
+    }
+
+}
+
+@media (min-width:500px) and (max-width:2560px){
+    .desenvolvido{
+        position: absolute;
+        right: 235px;
+        bottom: 155px;
+    }
+}

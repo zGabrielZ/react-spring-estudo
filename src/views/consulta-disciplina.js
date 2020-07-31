@@ -4,6 +4,7 @@ import FormGroup from '../componentes/form-group'
 import DisciplinaService from '../services/disciplina-service'
 import { msgAlerta, msgErro, msgSucesso } from '../componentes/toastr'
 import LocalStorageService from '../services/localStorage-services'
+import '../css/consulta-disciplina-estilo.css'
 
 class ConsultaDisciplina extends React.Component {
 
@@ -88,7 +89,7 @@ class ConsultaDisciplina extends React.Component {
             })
     }
 
-    voltar = () => {
+    cadastroDisciplina = () => {
         this.props.history.push('/cadastro-disciplina')
     }
 
@@ -141,8 +142,8 @@ class ConsultaDisciplina extends React.Component {
                                 Procurar
                             </button>
                             <button style={{ marginLeft: '20px' }}
-                                className="btn btn-danger" onClick={this.voltar}>
-                                Voltar
+                                className="btn btn-danger" onClick={this.cadastroDisciplina}>
+                                Ir para cadastro
                             </button>
                         </div>
                     </div>
@@ -188,12 +189,12 @@ class ConsultaDisciplina extends React.Component {
                                         }
                                     </tbody>
                                 </table>
-                                <footer>
+                                <footer className="paginacao">
                                     <div style={{ float: 'left' }}>
                                         Página {atualPagina} de {total}
                                     </div>
-                                    <div style={{ float: 'right' }}>
-                                        <ul className="pagination pagination-lg">
+                                    <div className="indices">
+                                        <ul className="pagination pagination-lg pages">
                                             <li className="page-item active">
                                                 <button type="button" className="page-link"
                                                     disabled={atualPagina === 1 ? true : false} onClick={this.primeiraPagina}

@@ -10,6 +10,9 @@ import NavBar from '../componentes/navBar';
 import 'toastr/build/toastr.css'
 import 'toastr/build/toastr.min.js'
 
+import 'jquery'
+import 'popper.js'
+import 'bootstrap'
 
 import ProvedorAutenticacao from './provedor-autenticacao'
 

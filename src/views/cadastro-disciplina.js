@@ -5,6 +5,7 @@ import DisciplinaService from '../services/disciplina-service'
 import LocalStorageService from '../services/localStorage-services'
 import { msgSucesso, msgErroForm, msgErro } from '../componentes/toastr'
 import { withRouter } from 'react-router-dom'
+import '../css/cadastro-disciplina-estilo.css'
 
 class CadastroDisciplina extends React.Component {
 
@@ -120,7 +121,7 @@ class CadastroDisciplina extends React.Component {
                             </FormGroup>
                             <FormGroup id="descricao" label="Descrição : " htmlFor="descricao">
                                 <br />
-                                <textarea rows="8" cols="65" id="descricao" name="descricao"
+                                <textarea rows="8" cols="187" id="descricao" name="descricao"
                                     aria-describedby="descricaoHelp" placeholder="Digite a descrição"
                                     value={this.state.descricao}
                                     onChange={e => this.setState({ descricao: e.target.value })}
@@ -129,18 +130,18 @@ class CadastroDisciplina extends React.Component {
                             {
                                 this.state.atualizando ?
                                     (
-                                        <button className="btn btn-success" onClick={this.atualizar}>
+                                        <button className="btn btn-success um-bt" onClick={this.atualizar}>
                                             Atualizar
                                         </button>
                                     ) :
-                                    <button className="btn btn-success" onClick={this.cadastrar}>
+                                    <button className="btn btn-success um-bt" onClick={this.cadastrar}>
                                         Cadastrar
                                     </button>
                             }
-                            <button style={{ marginLeft: '20px' }} onClick={this.voltar} className="btn btn-danger">
+                            <button onClick={this.voltar} className="btn btn-danger dois-bt">
                                 Voltar para home
                             </button>
-                            <button style={{ marginLeft: '20px' }} onClick={this.irParaConsulta} className="btn btn-warning">
+                            <button onClick={this.irParaConsulta} className="btn btn-warning tres-bt">
                                 Ir para consulta
                             </button>
                         </div>

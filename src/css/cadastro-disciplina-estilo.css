@@ -1,0 +1,22 @@
+@media(max-width:481px){
+
+
+    textarea{
+        width: 350px;
+    }
+
+    .tres-bt{
+        font-size: 20px;
+        width: 100%;
+    }
+}
+
+@media (min-width:500px) and (max-width:2560px){
+    .dois-bt{
+        margin-left: 20px;
+    }
+
+    .tres-bt{
+        margin-left: 20px;
+    }
+}

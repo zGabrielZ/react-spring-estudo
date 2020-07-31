@@ -1,6 +1,5 @@
 import React from 'react'
 import NavBarItem from './navBarItem'
-import NavBarDrop from './navBarDrop'
 
 import { AuthConsumer } from '../main/provedor-autenticacao'
 
@@ -18,7 +17,8 @@ function NavBar(props) {
                 <div className="collapse navbar-collapse" id="navbarResponsive">
                     <ul className="navbar-nav mr-auto">
                         <NavBarItem label="Home" href="#/home"/>
-                        <NavBarDrop label="Cadastros"/>
+                        <NavBarItem label="Aluno" href="#/cadastro-aluno"/>
+                        <NavBarItem label="Disciplina" href="#/consulta-disciplina"/>
                         <NavBarItem label="Horário de estudo" href="#/consulta-estudo"/>
                         <NavBarItem label="Sobre" href="#/sobre"/>
                         <NavBarItem onClick={props.deslogar} label="Sair" href="#/login"/>

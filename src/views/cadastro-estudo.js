@@ -43,6 +43,10 @@ class CadastroEstudo extends React.Component {
         this.props.history.push('/home')
     }
 
+    consultaEstudo = () => {
+        this.props.history.push('/consulta-estudo')
+    }
+
     cadastrar = () => {
         const alunoLogado = LocalStorageService.obterItem('_aluno_logado')
 
@@ -106,11 +110,14 @@ class CadastroEstudo extends React.Component {
                             </FormGroup>
                         </div>
                         <div className="col-md-6">
-                            <button className="btn btn-success" onClick={this.cadastrar}>
+                            <button className="btn btn-success um-bt" onClick={this.cadastrar}>
                                 Cadastrar
                                 </button>
-                            <button style={{ marginLeft: '20px' }} onClick={this.voltar} className="btn btn-danger">
+                            <button onClick={this.voltar} className="btn btn-danger dois-bt">
                                 Voltar para home
+                            </button>
+                            <button onClick={this.consultaEstudo} className="btn btn-primary tres-bt">
+                                Voltar para consulta
                             </button>
                         </div>
                     </div>

@@ -173,7 +173,6 @@ class ConsultaEstudo extends React.Component {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="bs-component">
-                                {/* <TableEstudo /> */}
                                 <table className="table table-hover">
                                     <thead>
                                         <tr className="table-secondary">
@@ -219,12 +218,12 @@ class ConsultaEstudo extends React.Component {
                                         }
                                     </tbody>
                                 </table>
-                                <footer>
+                                <footer className="paginacao">
                                     <div style={{ float: 'left' }}>
                                         Página {atualPagina} de {total}
                                     </div>
-                                    <div style={{ float: 'right' }}>
-                                        <ul className="pagination pagination-lg">
+                                    <div className="indices">
+                                        <ul className="pagination pagination-lg pages">
                                             <li className="page-item active">
                                                 <button type="button" className="page-link"
                                                     disabled={atualPagina === 1 ? true : false} onClick={this.primeiraPagina}

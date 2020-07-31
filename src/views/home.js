@@ -3,6 +3,7 @@ import AlunoService from '../services/aluno-services'
 import { msgErro } from '../componentes/toastr'
 import { AuthContext } from '../main/provedor-autenticacao'
 import LocalStorageService from '../services/localStorage-services'
+import '../css/home-estilo.css'
 
 class Home extends React.Component{
 
@@ -45,10 +46,10 @@ class Home extends React.Component{
                     usar a ferramenta de cima.
                 </p>
                 <p className="lead">
-                    <button className="btn btn-primary btn-lg" onClick={this.cadastrarDisciplina}>
+                    <button className="btn btn-primary btn-lg um-bt" onClick={this.cadastrarDisciplina}>
                         Cadastrar disciplina
                     </button>
-                    <button style={{ marginLeft: '20px' }} className="btn btn-danger btn-lg"
+                    <button className="btn btn-danger btn-lg dois-bt"
                     onClick={this.cadastrarEstudo}>
                         Cadastrar horário de estudo
                     </button>
