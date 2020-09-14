@@ -19,4 +19,8 @@
     .tres-bt{
         margin-left: 20px;
     }
+
+    textarea{
+        width: 1070px;
+    }
 }
